@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VenuePilot — Plan & Manage Venue Events</title>
+  <link rel="stylesheet" href="/css/landing.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="logo">Venue<span class="logo-accent">Pilot</span></a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#preview">Preview</a>
+        <a href="#login" class="btn btn-outline">Sign In</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h1>Plan and manage venue events <span class="accent">in one place</span></h1>
+        <p>VenuePilot is a lightweight event management dashboard built for venues that need to track, schedule, and organize their events without unnecessary complexity.</p>
+        <div class="hero-actions">
+          <a href="#login" class="btn btn-primary">Get Started</a>
+          <a href="#features" class="btn btn-text">Learn more &darr;</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="mockup-card">
+          <div class="mockup-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-row"><span></span><span></span><span></span></div>
+            <div class="mockup-row"><span></span><span></span><span></span></div>
+            <div class="mockup-row"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">Built for venue operations</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3>Event Scheduling</h3>
+          <p>Create and manage events with date, capacity, location, and status tracking. Keep your entire calendar organized.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Secure Access</h3>
+          <p>JWT-based authentication with encrypted passwords. Only authorized staff can access the management dashboard.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Live Dashboard</h3>
+          <p>Overview cards with real-time stats. Search, filter, and manage your events from a single clean interface.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="preview" class="preview">
+    <div class="container">
+      <h2 class="section-title">Clean, focused interface</h2>
+      <p class="section-sub">No clutter. Just the tools you need to keep your venue running.</p>
+      <div class="preview-mockup">
+        <div class="preview-sidebar">
+          <div class="preview-logo">VP</div>
+          <div class="preview-nav-item active">Dashboard</div>
+          <div class="preview-nav-item">Events</div>
+        </div>
+        <div class="preview-main">
+          <div class="preview-topbar">
+            <span>Dashboard</span>
+          </div>
+          <div class="preview-kpis">
+            <div class="preview-kpi"><span class="preview-kpi-num">12</span><span>Total Events</span></div>
+            <div class="preview-kpi"><span class="preview-kpi-num">5</span><span>Upcoming</span></div>
+            <div class="preview-kpi"><span class="preview-kpi-num">2</span><span>Sold Out</span></div>
+          </div>
+          <div class="preview-table">
+            <div class="preview-th"><span>Title</span><span>Date</span><span>Status</span><span>Capacity</span></div>
+            <div class="preview-tr"><span>Jazz Evening</span><span>Jul 15</span><span class="badge-scheduled">Scheduled</span><span>350</span></div>
+            <div class="preview-tr"><span>Rooftop Party</span><span>Aug 05</span><span class="badge-soldout">Sold Out</span><span>200</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="login" class="login-section">
+    <div class="container">
+      <div class="login-card">
+        <h2>Sign in to VenuePilot</h2>
+        <p>Access your venue management dashboard</p>
+
+        <% if (error) { %>
+          <div class="alert alert-error"><%= error %></div>
+        <% } %>
+
+        <form action="/login" method="POST" class="login-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="admin@venuepilot.com" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+        </form>
+
+        <div class="login-demo">
+          <p>Demo credentials: <strong>admin@venuepilot.com</strong> / <strong>admin123</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>VenuePilot &mdash; Portfolio project. Built with Express.js, MySQL & JWT.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<aside class="sidebar">
+  <div class="sidebar-logo">Venue<span>Pilot</span></div>
+  <nav class="sidebar-nav">
+    <a href="/dashboard" class="sidebar-link <%= typeof page !== 'undefined' && page === 'dashboard' ? 'active' : '' %>">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Dashboard
+    </a>
+    <a href="/dashboard/events" class="sidebar-link <%= typeof page !== 'undefined' && page === 'events' ? 'active' : '' %>">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Events
+    </a>
+  </nav>
+  <div class="sidebar-user">
+    <div class="user-avatar"><%= user.full_name.charAt(0).toUpperCase() %></div>
+    <div class="user-info">
+      <span class="user-name"><%= user.full_name %></span>
+      <span class="user-email"><%= user.email %></span>
+    </div>
+  </div>
+</aside>
